@@ -1,0 +1,416 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="橙留香Park">
+  <meta name="keywords" content="关键字">
+  
+    <meta name="description" content="我们提供两个付费的知识星球，一个专注于移动安全领域，另一个则是汽车信息安全运营领域。如果您有兴趣，欢迎您加入其中一个或两个星球   正式运营：Android 移动攻防「橙留香Park」 正在筹备中，预计将在不久的将来正式推出：汽车信息安全运营  0x01 知识星球：Android 移动攻防「橙留香Park」 在这里，我们聚集了一群志同道合的人，分享着各自的专业知识和经验，共同成长和学习。我们的合">
+<meta property="og:type" content="website">
+<meta property="og:title" content="知识星球：Android 移动攻防「橙留香Park」 | 汽车信息安全运营">
+<meta property="og:url" content="https://orangey.info/planet/index.html">
+<meta property="og:site_name" content="橙留香Park | 车联网安全博客 — 专注于车联网安全领域的 Android 终端反入侵技术研究、汽车威胁狩猎">
+<meta property="og:description" content="我们提供两个付费的知识星球，一个专注于移动安全领域，另一个则是汽车信息安全运营领域。如果您有兴趣，欢迎您加入其中一个或两个星球   正式运营：Android 移动攻防「橙留香Park」 正在筹备中，预计将在不久的将来正式推出：汽车信息安全运营  0x01 知识星球：Android 移动攻防「橙留香Park」 在这里，我们聚集了一群志同道合的人，分享着各自的专业知识和经验，共同成长和学习。我们的合">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2023/03/31/pp25nYt.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/04/03/pphyKat.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/04/03/pphy3RS.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/04/03/pphyJMQ.png">
+<meta property="article:published_time" content="2023-04-23T08:07:02.000Z">
+<meta property="article:modified_time" content="2023-04-04T09:17:59.087Z">
+<meta property="article:author" content="橙留香Park">
+<meta property="article:tag" content="关键字">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s1.ax1x.com/2023/03/31/pp25nYt.png">
+  
+  
+  
+  <title>知识星球：Android 移动攻防「橙留香Park」 | 汽车信息安全运营 - 橙留香Park | 车联网安全博客 — 专注于车联网安全领域的 Android 终端反入侵技术研究、汽车威胁狩猎</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"orangey.info","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"java"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>橙留香Park | 车联网安全博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/planet/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>知识星球</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="知识星球：Android 移动攻防「橙留香Park」 | 汽车信息安全运营"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<article class="page-content">
+  <blockquote>
+<p><font color='red'>我们提供两个付费的知识星球，一个专注于移动安全领域，另一个则是汽车信息安全运营领域。如果您有兴趣，欢迎您加入其中一个或两个星球</font></p>
+</blockquote>
+<ul>
+<li><strong>正式运营</strong>：<a target="_blank" rel="noopener" href="https://t.zsxq.com/0cc7LF01q">Android 移动攻防「橙留香Park」</a></li>
+<li><strong>正在筹备中，预计将在不久的将来正式推出</strong>：<a target="_blank" rel="noopener" href="https://t.zsxq.com/0cRf6GBSm">汽车信息安全运营</a></li>
+</ul>
+<h1 id="0x01-知识星球：Android-移动攻防「橙留香Park」"><a href="#0x01-知识星球：Android-移动攻防「橙留香Park」" class="headerlink" title="0x01 知识星球：Android 移动攻防「橙留香Park」"></a>0x01 知识星球：Android 移动攻防「橙留香Park」</h1><blockquote>
+<p>在这里，我们聚集了一群志同道合的人，分享着各自的专业知识和经验，共同成长和学习。我们的合伙人、嘉宾来自不同领域，包括Android安全、Web安全、车联网安全、等保测评等，每位合伙人、嘉宾都是行业内的佼佼者，他们将分享他们独特的见解、经验和想法，帮助大家更好地了解这个领域</p>
+<p>我们提供高质量的内容和深度交流的机会，让你能够在和合伙人、嘉宾和其他成员的互动中，得到更多的启发和灵感</p>
+<p>我们相信，每个人都有自己的价值和潜力，只要有一个好的平台，就能够实现更多的可能性。在我们的知识星球中，你将与一群优秀的人共同探索、分享、成长。我们期待你的加入！</p>
+</blockquote>
+<p>欢迎加入「橙留香Park」的 “Android 移动攻防「橙留香Park」” 知识星球，让我们相互交流共同进步，营造和谐、融洽、谦逊的技术氛围，拒绝虚假夸大。我们的目标是帮助想要入门 Android 移动安全的人，让每个人都能学到知识，进入 Android 移动安全领域，并成为其中的一员</p>
+<p>▌为何创建？</p>
+<p>始终相信 “技术是需要交流的，知识是需要沉淀的，精神是需要传承的”，以及想分享一些CSDN博客上未分享的知识 </p>
+<p>▌为何创建？</p>
+<p>始终相信 “技术是需要交流的，知识是需要沉淀的，精神是需要传承的”，以及想分享一些CSDN博客上未分享的知识 </p>
+<p>▌为何加入？ </p>
+<p>1、自己的路要自己走，没有人能代替你前行。但是这里有一群志同道合，不断探寻知识的同学们，一起探讨学习 </p>
+<p>2、星球面向对象：真心学习的人，谦逊交流的人，愿意分享的人。希望，您是一个纯粹的人，至少在这里 </p>
+<p>▌星球费用</p>
+<p>收费不是目的，而是让有意愿的人参与进来。我们致力于打造平等的社区，只要你愿意分享交流，你所投入的费用一定会回报你，并带给你终身受益的知识 </p>
+<p>1、始终觉得知识付费并不可耻，但知识的价值无法用货币衡量 </p>
+<p>2、星球的所有收入将用于社区扩大、分享奖励和研究奖励。知识星球是起点，而非终点 </p>
+<p>3、所有付费用户，续费按星球当下价格续费 </p>
+<p>4、用户的续费折扣将根据其贡献度而异，前 10% 的贡献用户，则可享受免费续费 </p>
+<p>▌白嫖方法 </p>
+<p>有人问我：“你这么贵，有人买吗？”，也有人眼馋星球里的知识，想过来白嫖 你是不是以为，我很讨厌白嫖？其实，我是欢迎白嫖的，但有条件，如下： </p>
+<p>1、如果你能分享资料（脱敏、无版权纠纷），我愿意与你共建知识星球 </p>
+<p>2、如果你嫌麻烦，或者不愿意提供资料，那就积极参与群内讨论，分享自己的知识。即使，没有知识也不必担心，一个好问题胜过一百个答案 </p>
+<p>3、如果这也不愿意，你可以分享我的公众号或CSDN博客，让更多人参与进来。公众号或CSDN博客已经有很多资料，应该可以满足你的需求 </p>
+<p>4、如果这还不愿意，那你可能是一位高端人士，白嫖可能不适合你的身份。不过我很愿意与你建立长期合作关系，提供一对一咨询、灵活用工等服务，服务一定到位（你将成为我的尊贵VIP客户，知识星球自然免费向你开放）</p>
+<p><font color='red'>以上条款表明，伸手党的续费价格会逐渐增加，而真心交流的小伙伴，则可享受免费续费</font></p>
+<p><code>现在，加入我们的知识星球，可获得价值399元的知识星球优惠券（限量100张）！快来加入我们，畅享知识的海洋！</code></p>
+<p><img src="https://s1.ax1x.com/2023/03/31/pp25nYt.png" srcset="/img/loading.gif" lazyload></p>
+<p></font>本篇文章发布时，我们的知识星球已经积累了大量的优质文章（如下图），涵盖了 Android 移动安全领域的实用知识。现在就加入我们，与我们共同分享这些有价值的内容吧！</font></p>
+<p><img src="https://s1.ax1x.com/2023/04/03/pphyKat.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://s1.ax1x.com/2023/04/03/pphy3RS.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://s1.ax1x.com/2023/04/03/pphyJMQ.png" srcset="/img/loading.gif" lazyload></p>
+
+
+  
+
+</article>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://orangey.blog.csdn.net" target="_blank" rel="nofollow noopener"><span>CSDN博客</span></a> <i class="iconfont icon-love"></i> <a href="https://mp.weixin.qq.com/s/dl1nKyX_gVVG8jRvQXq9yw" target="_blank" rel="nofollow noopener"><span>微信公众号</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
