@@ -1,0 +1,727 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="橙留香Park">
+  <meta name="keywords" content="关键字">
+  
+    <meta name="description" content="订阅我们的知识星球，即可获取付费专属内容的解锁权限">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ToBeWritten之IoT Web、移动应用、设备硬件、无线电通信、IoV威胁建模">
+<meta property="og:url" content="https://orangey.info/2016/01/01/129985748/index.html">
+<meta property="og:site_name" content="橙留香Park | 车联网安全博客 — 专注于车联网安全领域的 Android 终端反入侵技术研究、汽车威胁狩猎">
+<meta property="og:description" content="订阅我们的知识星球，即可获取付费专属内容的解锁权限">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-01-01T02:00:00.000Z">
+<meta property="article:modified_time" content="2023-04-08T13:25:13.766Z">
+<meta property="article:author" content="橙留香Park">
+<meta property="article:tag" content="ToBeWritten">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>ToBeWritten之IoT Web、移动应用、设备硬件、无线电通信、IoV威胁建模 - 橙留香Park | 车联网安全博客 — 专注于车联网安全领域的 Android 终端反入侵技术研究、汽车威胁狩猎</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"orangey.info","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"java"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>橙留香Park | 车联网安全博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/planet/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>知识星球</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="ToBeWritten之IoT Web、移动应用、设备硬件、无线电通信、IoV威胁建模"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2016-01-01 10:00" pubdate>
+          2016年1月1日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          6.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          55 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">ToBeWritten之IoT Web、移动应用、设备硬件、无线电通信、IoV威胁建模</h1>
+            
+            
+              
+              <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="61ad68eadcddb73bf893d73875721938285a5262f8f87d12c1b6cef738ef0f6d">425f2035379688832a0bd71bf2e653a29eb5908fa5bdc730da19f1665949ab62c1bb7b4102f5c031e9bf07d4e3933234390d77bd2901977491284ff80372a0cbc159afdbfdf73c2415ebffafbb893d2579246a57af461b4c0b34360cd1d6707055f47edb8ad261327ff53f776d2f770a0e65a76776638e38821897b13187a360d7fe297a83f0e5956fe2c37d736edc0c65f4d75c3084c23eaa5533306772dcd0f1a3bdc3df38eee1601937c5da31bd42062445eda40c950f8c8237bcca7b6e1337d1ee561b8afd11837c8bdb4dfec8eb21656564dd98b960ff388e94e1b53a41039d3329eb13fe79d774bb41deb88b3e2223b0961eab560a67904470ebaec271b72a5e1607704716decf8e0b58db1bac791c651a707b59c9c7614639881004a20494f7655df61c4dac544d78be6ae987586791d5601e9616d59ccb48760f5d83f096659550722dfa833f99bd01f9f33cc06bea3c3961f65ab31b24459845016ae8ee79427c81a6b199145458fd692f683542c822a20657eaed9f31c59e8cc708b117203cdc53d5ad77db90e6482f2ea665eb22c6bd67feabdfb9c3775e440fd3757c8a76907feb67057ab3d60334520d61679a20272eb1a9620a3a2039b609d547319169a16012f436ae5ad97588e9f1b3178a438bdeb1ef6dd32b5dd7e52aedcf8fa80a67e1760b6a0c2aa934d4999b559a1971b72b5b5df5cec5f22b70c0a06489eafb4f10ac2089977b4c70b6e3e7ab98de07b5832186cbe2e58862da00f1bd1b9ffd2eda6746df9ebe4b1dac63cffd5ea6d110fd71d0fef69ceaa247af133c124f5bb4af77b4bbfdeb91f37be8cfbcff901973b1859c6cc0991493d62b2f3202440455379db7357a27fa18259df0e20801e87bcb5c8adfe7e57798b51865c8f1235009b0e02ba25709e3bc47f4c5db52ae7649f83e4242eb2e0a988ff534d9cf7f5dc47b2d24c40d170370884e0e7ebfa46f4a41a7e34825c4c955f5b34ccbe020d38e3ded86433aae2ca3b91326bb46615032b4d7fd511a420a9342d2cf57362ab7d14e42dd9b6628bc1c92c8799180445f2a795de14101a980685bd22df9445c048199e7d17821a5c2054e42c2ffb81b1bbf519ca9056451da0f2c26c56f9ee70ebb526eeb10c0b2db9c5e8b9362f3ace1d6d5e19b29b57a27f3ea356d3fbcc35ee5388739bd2dabc4272e4f1063fa278b8b15ddc75fe9289b5089606fbcfc8f31bac5db171ec2c040795bfb2e08d6af20e4b7013ee3ff05c9052943f41c8fad3beebded3293122d45ce700f16d277a0465172eba4e6dbb3fdf9420346d4e7e082e88fc85fc19be681de2dd88cf004092cd9683ba79af1979e40a5350df176d638f10b51a0beea63d38776fcb6ce0e365a35aafbb2c3dd1435338e1ff5b3785af4d9d2f36362592ce247a9caf0c7f14cdf0c8d99feaad93a9d19febdda53bf4fb9005984c54ba9c65af2c5a5f37b32435debca667f56f0bbbdd6d8b6ff37c93578a39355bbf5ec740d735d46c9251bc37ae10e80dd0a84df6f8ab462d196f372185b1490a685c461109c8c8d8a35e840d2fe3d333964b510420133f52e435af41b649e17be94ebcad5ee3dddb6580de022af14ab825df2a73fb943822ed00d6c9518aa39bbf7b1eb9f1882b2657bca569880c4e83aed16745bf35d64d06ca91dd148b6bd125e29c37e543b7f5adba626872241f743c47d31373a6314bf70eada04341bf1d64ab0e8c4ce21ccd1d338fd4a26b9f2a649da813c1db924213eb5ad6ded325b6f4371bdde160447ab7bf6acd31e0ded19c8fb75977325bd05dcc01497c072589f86d9d37119efc33082b09421ea597f87e135b544af01d52771b77657e7902538555befea59afb8e8b38b6a41e78633bbfe31fa06ec503347f9db12c0450e1e63e83f4b7e3a30147459e387d6bba68b3c9d591b9967ac8694775635964d43444aff38fe16aaa185596595bcaeb88e7fe1678a43d298b27b04f92e672ac38d09dd96d177613a415d2810d038e5781fdde187f4cf8266304b698d442b30e47509a403acae2521f43c8c75e629fb5947ee7830cd0a59552acd973390d345b52fb2e8fa3e16ce5739e35a30040bb715f83584297c488ed93091429abd2e59ba66fdcf0aed47c6291d62ac9118ea4c5bfb6588d9108bac5d24930fbe3cf30ad38fc1e9ed9e1aa687ddc6746d12fd55ed8bd97c10a31a05005c0b9e099578c413836fac53c4ec6091a2a4c6a0bcf8b0f34be7f306bbac8beb243ab81047edd85ec4b251d9bf05bd2ec33deebf4579e8a5a0905b06bd258f24758ae66a302d4df28964f7a5ebe1f155faeeb94ba85c8e3b99acf1d21b50ca832af945a2ac44a4ade56beaa99a392f07c73e4c2237906e515ec69a0acc98ceba3ad205f29372d074edd0179cd913b8fad1feb0e82e4048efd6ace252cdfc8265e72e8ee12191c77917aa05094cb60e2580566497c6a6b7ae70841e6b847ecb6182ff0b62bee82e28bde130bdc6762a38c61902c8272426205a1da84039de7b59d718b74266ad8581a357bfb6b485a08b033891fa69f14958788a897f26b9b3cd9df2118620dca402a4f3dc76227ee23d261a44694919edfc067ca8ad3c12942de6f77145c2eb18adcd3931331122b76f885b80e5a8e743fa8eab771bda3be605abaeda48958ae55789bd68c042afa0a96236a58ded58e936470c87cb8f5bd8f92f132458084e299fefe684238d0e2174fe9a0554d2d1a2c0682e639d738e84b67fe60c159874ade62d79749f259f27cfda152b0007d9be70c550b7335c200c2cc0198f906dc6279e831e984f2a3b1acb7a7cd538dfc0c8bfe0782c2a3f8c696c14801749e8570fcf29b3cf31262769e5fed3a1664aaba56f6985dac02f7df95683315c0990458eee7012f8cb2e9179b59c59e363e3b1f90139736e7b9b83ef12f759fb544b934ed343a1a1d3b24ba9854c87e4f0aee2bccde6135fa23203808d45c3f25305db4c2891ad36369a5d74d9e775900cc2c0bca660245738f3d5e609953091339c68b4445dcc8863851e5bce61e1d5f0770679021f4a1c89e787304629243bfc116b9a2c5dcadff349b11aa25c1e48465893ef093aaeb64a4193a3ca592282c96a0fa4e53f314e7a85eb2ad9bde53940dcf41cb646cb82d72d396addc9a785c50fe0595312189b09509a219df1872b1e18e43810df3a899785b6b86f7e681da68989f9f25c6fc5b010310702dc293ccb7f08b991e9ae0a128ef51ca3b12b75becf0ed3c13269eb0111e79f409bb425bfe25a7078c76a2eaab22353ff779c21d254689fe1439b803ccdd1d309bf662d4f2741c371dba7312ee66f31355d42fc4b7da745732191e0efe3612cd0f077250f2cb5787e7ff232a98cceb38ddbe4ea10e895eedefa7225d764fabd2f4380be8796a319edfecef896d3fa22b05a6245aff81b670dac12d5802023d60bfae8fda9d3ffb2c257f2713739b031e1be155d560cd0c384860d8672f4e9711a045a1dd0733438423381968348eb53b503405d5be7fcdd880eaef61dcf93849e2d897f085cd3296ab5c9d48eed0f1efa663b344e2bac28c823185e7841f9cf4fd4a509e2993d44d4396d6c710842c82130bc8d2bf285951d652dc2bd3d0bf0996eb75767177660d525a4ada61ab0f53b42e2fb19c4442d262b3b7f0fee2fce355dace453fbdc976f56acb8a30e82980d63f34b54edfedfa6ba3f10e3c4a834ee2bbf5b2b873688b39a90a3cf90a4e9fc7d42ceaf0948529fe18d67a81e1ed9a1fd82abcde9de90a9f39dd0caedd88205f6ed58178533fcae862d55a95bcde2f43f69506bb8861f72aacc3a94b79836d72e1c69156824e3b7aace41d72fe024e2ae77acdd80013257e48a961a9ba91a360967849ce0f0e9e6eb260039e11608f1ed11ba9459d8c3cea205562e692b5dd7d2928ea312ff3c681e87755564176db4c672156fe829806533cbac3454b1dd8b963af7861220d043631c2cbecace0257137890d2535a81d833ad5f59385ad89d1b3652a860a266f46166844a2d6e99763bb218c1a97da8d792b484ffefe88d55355a0b7b1fd5d1346a4c30c66af852456ef8fcfcf229e30bd9aea5c827b5ab8b8ca16dea8bf905faf5ad3956b470446aea65459f23b400d3984e123fee299a698602df0f02e863bf6e461db60bb8546485d559b67a48e123bab8b6cf841d3fc442f82e57b901c7bd8a468081d93ac48be5496ddf38b28cfc22e3b8f00cc7ae3d6c4551072d4fd5f037704d7bc59c951efb68f78b3fba73294ff2e6fb76b48ce17f3321e02e6141f8d99572e14a917caede42d34e92dea8c7feae4e21ea4b145cd464ad0a1d422e43cc3e59be3a5f0035f604278f638ab53b91c340b5e3e38ea951ecfd5765d4de82ca752e1f4ab0b8d932ecc3d49c25151c34a8601bb99e660f5740959ab9229e919258f67abe20d708e6e6d38fa4155cfa5cae5c0815ecac90e8c90fb2cbd74f73e9c96c7201ad9da55cd59d21b7000c84b09aa21c892edb30084d637ccd74b9c38bce1fce261c76920f83edc0ffb9ce8fcf3d84139c26f43b3490b90d31dc30e9f210468ab0e68d53eec7e2432ffc3b61f59da7a52dcaba0607cbc2</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">若您希望查看本文的详细内容，需要前往知识星球进行订阅</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+              
+
+              
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%BE%85%E5%86%99%E7%B3%BB%E5%88%97/" class="category-chain-item">待写系列</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/ToBeWritten/">#ToBeWritten</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>ToBeWritten之IoT Web、移动应用、设备硬件、无线电通信、IoV威胁建模</div>
+      <div>https://orangey.info/2016/01/01/129985748/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>橙留香Park</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2016年1月1日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2016/01/01/129985954/" title="ToBeWritten之MOST协议、Flex Rat总线、车载以太网">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">ToBeWritten之MOST协议、Flex Rat总线、车载以太网</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2016/01/01/129985780/" title="ToBeWritten之篡改固件">
+                        <span class="hidden-mobile">ToBeWritten之篡改固件</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.7.2/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"1e96aec5ac46370916fa","clientSecret":"ee5e97a65cf34e9fe31e15ab0421a94968237f5e","repo":"ogGitalk","owner":"ananasOrangey","admin":["ananasOrangey"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '6a74babe3ce7fd0701db68fc60c6ddf5'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://orangey.blog.csdn.net" target="_blank" rel="nofollow noopener"><span>CSDN博客</span></a> <i class="iconfont icon-love"></i> <a href="https://mp.weixin.qq.com/s/dl1nKyX_gVVG8jRvQXq9yw" target="_blank" rel="nofollow noopener"><span>微信公众号</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+  <script defer>
+    if (document.getElementById('hbePass')) {
+      Fluid.utils.waitElementLoaded('hbe-prefix', function() {
+        var hbePrefix = document.querySelector('hbe-prefix');
+        hbePrefix.parentElement.classList.add('markdown-body');
+        Fluid.utils.retry(function() {
+          if (Fluid.boot && Fluid.boot.refresh) {
+            Fluid.boot.refresh();
+            return true;
+          }
+        }, 100, 10);
+      })
+    }
+  </script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

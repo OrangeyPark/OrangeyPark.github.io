@@ -1,0 +1,840 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="橙留香Park">
+  <meta name="keywords" content="关键字">
+  
+    <meta name="description" content="”橙留香Park | 车联网安全博客“ 必读指南：让你在学习的路上不再孤单">
+<meta property="og:type" content="article">
+<meta property="og:title" content="”橙留香Park | 车联网安全博客“ 必读指南：让你在学习的路上不再孤单">
+<meta property="og:url" content="https://orangey.info/2030/10/10/129953419BogGuide/index.html">
+<meta property="og:site_name" content="橙留香Park | 车联网安全博客 — 专注于车联网安全领域的 Android 终端反入侵技术研究、汽车威胁狩猎">
+<meta property="og:description" content="”橙留香Park | 车联网安全博客“ 必读指南：让你在学习的路上不再孤单">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2030-10-10T02:00:00.000Z">
+<meta property="article:modified_time" content="2023-04-08T07:24:05.692Z">
+<meta property="article:author" content="橙留香Park">
+<meta property="article:tag" content="CarHacking">
+<meta property="article:tag" content="AndroidSecurity">
+<meta property="article:tag" content="ATTACK">
+<meta property="article:tag" content="CarThreatHunting">
+<meta property="article:tag" content="BlogGuide">
+<meta property="article:tag" content="ToBeWritten">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>”橙留香Park | 车联网安全博客“ 必读指南：让你在学习的路上不再孤单 - 橙留香Park | 车联网安全博客 — 专注于车联网安全领域的 Android 终端反入侵技术研究、汽车威胁狩猎</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"orangey.info","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"java"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>橙留香Park | 车联网安全博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/planet/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>知识星球</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="”橙留香Park | 车联网安全博客“ 必读指南：让你在学习的路上不再孤单"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2030-10-10 10:00" pubdate>
+          2030年10月10日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          4.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          35 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">”橙留香Park | 车联网安全博客“ 必读指南：让你在学习的路上不再孤单</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="0x01-Android-移动安全系列指南"><a href="#0x01-Android-移动安全系列指南" class="headerlink" title="0x01 Android 移动安全系列指南"></a>0x01 Android 移动安全系列指南</h1><h2 id="1-1-Android-Security"><a href="#1-1-Android-Security" class="headerlink" title="1.1 Android Security"></a>1.1 Android Security</h2><ul>
+<li><a href="https://orangey.info/2023/01/01/122087887/">Andorid安全之搭建Android开发环境和基础学习指南</a></li>
+<li><a href="https://orangey.info/2023/04/04/121448565/">Android安全之ADB命令总结「收藏版」</a></li>
+<li><a href="https://orangey.info/2023/04/04/122402479/">Android安全之Smali语法总结「必备」</a></li>
+<li><a href="https://orangey.info/2023/04/04/122718139/">Android安全之ARM汇编指令集手册「精简汇总版」</a></li>
+<li><a href="https://orangey.info/2023/04/04/122091826/">Android安全之Android中常用权限手册「必备」</a></li>
+<li><a href="https://orangey.info/2023/04/04/123485441/">Android安全之常用逆向工具汇总</a></li>
+<li><a href="https://orangey.info/2023/04/04/119651913/">Android安全之APK逆向入门介绍</a></li>
+<li><a href="https://orangey.info/2023/04/04/119462162/">Android安全之APK应用程序分析「附带Smali基础语法解析」</a></li>
+<li><a href="https://orangey.info/2023/04/04/122787743/">Android安全之Drozer安全测试详细使用教程</a></li>
+<li><a href="https://orangey.info/2023/04/04/125911241/">Android安全之聊聊Drozer模块插件</a></li>
+<li><a href="https://orangey.info/2023/04/04/124588643/">Android安全之车机Android攻击面总结</a></li>
+<li><a href="https://orangey.info/2023/04/04/121377483/">Android安全之Android加密算法浅析</a></li>
+<li><a href="https://orangey.info/2023/04/04/122089268/">Android安全之Android APP应用程序的汉化功能 (修改so中的字符串内容)</a></li>
+<li><a href="https://orangey.info/2023/04/04/122088540/">Android安全之Android so文件分析「详细版」</a>：</li>
+<li><a href="https://orangey.info/2023/04/04/122247286/">Android安全之手动注册Native&#x2F;快速定位关键Smali代码方法</a></li>
+<li><a href="https://orangey.info/2023/04/04/122269019/">Android安全之签名机制</a></li>
+<li><a href="https://orangey.info/2023/04/04/122090111/">Android安全之混淆机制、签名保护的案例浅析</a></li>
+<li><a href="https://orangey.info/2023/04/04/124985156/">Android安全之绕过APK重打包签名校验「防篡改校验」</a></li>
+<li><a href="https://orangey.info/2023/04/04/126548441/">Android安全之APK应用程序签名异常的检测方法</a></li>
+<li><a href="https://orangey.info/2023/04/04/123479749/">Android安全之三问为什么？APP加固原理以及加固技术基础知识解惑</a></li>
+<li><a href="https://orangey.info/2023/04/04/122151416/">Android安全之Android中allowBackup属性浅析「含案例实验」</a></li>
+<li><a href="https://orangey.info/2023/04/04/123488541/">Android安全之不反编译APK情况下添加android:debuggable属性</a></li>
+<li><a href="https://orangey.info/2023/04/04/122264566/">Android安全之Android奇淫run-as命令，调用系统受UID限制的API</a></li>
+<li><a href="https://orangey.info/2023/04/04/126548600/">Android安全之检测APK应用程序是否可被调试的多种技巧</a></li>
+<li><a href="https://orangey.info/2023/04/04/122431881/">Android安全之和平精英辅助APK逆向分析</a></li>
+<li><a href="https://orangey.info/2023/04/04/122780508/">Android安全之Android Xposed插件开发，小白都能看得懂的教程</a></li>
+<li><a href="https://orangey.info/2023/04/04/123479181/">Android安全之浅析Android APP是如何运行的</a></li>
+<li><a href="https://orangey.info/2023/04/04/123408353/">Android安全之Android 如何生成APP(APK)「详解」</a></li>
+<li><a href="https://orangey.info/2023/04/04/123520495/">Android安全之静态逆向APK应用浅析「手动注入smali」+「IDA Pro静态分析so文件」+「IDA Pro基础使用讲解」</a></li>
+<li><a href="https://orangey.info/2023/04/04/123582115/">Android安全之Android APP动态调试的三种Smali注入小技巧</a></li>
+<li><a href="https://orangey.info/2023/04/04/123787445/">Android安全之动态调试APP的一些技巧「Android Studio调试」</a></li>
+<li><a href="https://orangey.info/2023/04/04/123792872/">Android安全之IDA Pro调试dex（Dalvik指令动态调试）</a></li>
+<li><a href="https://orangey.info/2023/04/04/123843560/">Android安全之利用GDB动态调试Android APP应用程序</a></li>
+<li><a href="https://orangey.info/2023/04/04/123877083/">Android安全之利用JDB调试Android应用程序 (动态代码注入技术)</a></li>
+<li><a href="https://orangey.info/2023/04/04/123917695/">Android安全之IDA Pro调试so「普通调试+Debugger调试」</a></li>
+<li><a href="https://orangey.info/2023/04/04/124746120/">Android安全之绕过SSL Pinning抓HTTPS数据</a></li>
+<li><a href="https://orangey.info/2023/04/04/124755818/">Android安全之绕过直连、HOST校验、系统证书校验、代理检测、双向认证抓HTTPS数据</a></li>
+<li><a href="https://orangey.info/2023/04/04/124793802/">Android安全之绕过WebView SSL Pinning抓HTTPS数据</a></li>
+<li><a href="https://orangey.info/2023/04/04/125198729/">Android安全之Protobuf 协议安全「正向反解Protobuf 协议与逆向反解Protobuf 协议讲解」</a></li>
+<li><a href="https://orangey.info/2023/04/04/124347082/">Android安全之Root检测与Root绕过 (浅析)</a></li>
+<li><a href="https://orangey.info/2023/04/04/124604890/">Android安全之Android工程模式</a></li>
+<li><a href="https://orangey.info/2023/04/04/124100960/">Android安全之非预期的信息泄露(边信道信息泄露)「浅析」</a></li>
+<li><a href="https://orangey.info/2023/04/04/123981576/">Android安全之「组件安全攻防」组件暴露导致的安全问题「基础篇含案例实验」</a></li>
+<li><a href="https://orangey.info/2023/04/04/124040167/">Android安全之Content Provider攻防</a></li>
+<li><a href="https://orangey.info/2023/04/04/124097208/">Android安全之Broadcast Receivers攻防</a></li>
+<li><a href="https://orangey.info/2023/04/04/124199076/">Android安全之WebView攻防「基础篇」</a></li>
+<li><a href="https://orangey.info/2023/04/04/124431951/">Android安全之数据存储与数据安全「详解」</a></li>
+<li><a href="https://orangey.info/2023/04/04/125047569/">Android安全之Android Fragment注入</a></li>
+<li><a href="https://orangey.info/2023/04/04/125236134/">Android安全之ZIP文件目录遍历漏洞</a></li>
+<li><a href="https://orangey.info/2023/04/04/125326118/">Android安全之Android 序列化漏洞「浅析」</a></li>
+<li><a href="https://orangey.info/2023/04/04/126344611/">Android安全之IPC机制敏感信息挖掘</a></li>
+<li><a href="https://orangey.info/2023/04/04/126344674/">Android安全之Log日志敏感信息泄露+自定义URL敏感信息泄露挖掘</a></li>
+<li><a href="https://orangey.info/2023/04/04/126346717/">Android安全之本地存储敏感信息挖掘「一」</a></li>
+<li><a href="https://orangey.info/2023/04/04/126347260/">Android安全之本地存储敏感信息挖掘「二」</a></li>
+<li><a href="https://orangey.info/2023/04/04/126348231/">Android安全之APK备份文件敏感信息挖掘</a></li>
+<li><a href="https://orangey.info/2023/04/04/126349620/">Android安全之剪贴板+键盘缓存+UI界面+自动截屏敏感信息挖掘</a></li>
+<li><a href="https://orangey.info/2023/04/04/126352435/">Android安全之APK应用程序第三方服务+通知功能的敏感信息挖掘</a></li>
+<li><a href="https://orangey.info/2023/04/04/126640944/">Android安全之检测APK中调试代码是否暴露敏感信息</a></li>
+<li><a href="https://orangey.info/2023/04/04/126641038/">Android安全之检测APK中异常处理代码是否暴露敏感信息</a></li>
+<li><a href="https://orangey.info/2023/04/04/126600642/">Android安全之APK内存敏感信息泄露挖掘</a></li>
+<li><a href="https://orangey.info/2023/04/04/128849646/">Android安全之移动安全测试指南概述</a></li>
+<li><a href="https://orangey.info/2023/04/04/128851384/">Android安全之常规移动安全测试指南</a></li>
+<li><a href="https://orangey.info/2023/04/04/128852154/">Android安全之移动安全测试指南「移动安全测试基本原理」</a></li>
+<li><a href="https://orangey.info/2023/04/04/128852540/">Android安全之移动安全测试指南「安全测试和SDLC」</a></li>
+<li><a href="https://orangey.info/2023/04/04/128852835/">Android安全之移动安全测试指南「移动应用程序篡改和逆向工程」</a></li>
+</ul>
+<h1 id="0x02-车联网安全系列指南"><a href="#0x02-车联网安全系列指南" class="headerlink" title="0x02 车联网安全系列指南"></a>0x02 车联网安全系列指南</h1><h2 id="2-1-Car-Hacking"><a href="#2-1-Car-Hacking" class="headerlink" title="2.1 Car Hacking"></a>2.1 Car Hacking</h2><ul>
+<li><a href="https://orangey.info/2023/04/04/119461914/">Car Hacking之车联网安全学习路线图</a></li>
+<li><a href="https://orangey.info/2023/04/04/124602736/">Car Hacking之关于IoT安全该如何入门？你必须知道的那些事「3万字详解」</a></li>
+<li><a href="https://orangey.info/2023/04/04/119409898/">Car Hacking之关于车联网安全中，你必须知道的常见车端知识</a></li>
+<li><a href="https://orangey.info/2023/04/04/118888796/">Car Hacking之关于车联网安全中，你需要了解的常见安全术语</a></li>
+<li><a href="https://orangey.info/2023/04/04/125499978/">Car Hacking之树莓派4B&#x2F;2W，烧写SD卡刷入 Android 系统</a></li>
+<li><a href="https://orangey.info/2023/04/04/120008524/">Car Hacking之CAN总线初探</a></li>
+<li><a href="https://orangey.info/2023/04/04/128453811/">Car Hacking之汽车TSP (Telematics Service Provider) 服务浅析</a></li>
+</ul>
+<h1 id="0x03-ATT-amp-CK-安全系列指南"><a href="#0x03-ATT-amp-CK-安全系列指南" class="headerlink" title="0x03 ATT&amp;CK 安全系列指南"></a>0x03 ATT&amp;CK 安全系列指南</h1><ul>
+<li><a href="https://orangey.info/2023/04/04/123002359/">ATTACK安全之正则表达式手册教程</a></li>
+<li><a href="https://orangey.info/2023/04/04/123353195/">ATTACK安全之ATT&amp;CK框架在车联网安全中的应用和企业SOC实践分析</a></li>
+<li><a href="https://orangey.info/2023/04/04/125079251/">ATTACK安全之Android Activity劫持检测与防护</a></li>
+<li><a href="https://orangey.info/2023/04/04/125743446/">ATTACK安全之检测车机中ADB远程调试控制Android系统攻击</a></li>
+<li><a href="https://orangey.info/2023/04/04/125390259/">ATTACK安全之Android BLE 攻击与检测</a></li>
+<li><a href="https://orangey.info/2023/04/04/125890045/">ATTACK安全之Android SSH原理分析以及攻击检测</a></li>
+<li><a href="https://orangey.info/2023/04/04/127433325/">ATTACK安全之入交互式&#x2F;非交互式Shell和登录式&#x2F;非登录式Shell的检测</a></li>
+<li><a href="https://orangey.info/2023/04/04/125662529/">ATTACK安全之Android ICMP隧道攻击原理与入侵检测实践</a></li>
+<li><a href="https://orangey.info/2023/04/04/126290777/">ATTACK安全之Android 车机设备中监控命令执行的一些想法「概念篇」</a></li>
+<li><a href="https://orangey.info/2023/04/04/126301828/">ATTACK安全之Android车机证书攻击场景检测「检测系统代理」</a></li>
+<li><a href="https://orangey.info/2023/04/04/126705363/">ATTACK安全之Android车机证书攻击场景检测「检测backup备份APK获取证书」</a></li>
+<li><a href="https://orangey.info/2023/04/04/127924825/">ATTACK安全之Android Root检测</a></li>
+<li><a href="https://orangey.info/2023/04/04/122264018/">ATTACK安全之DDMS反调试检测</a></li>
+<li><a href="https://orangey.info/2023/04/04/128035401/">ATTACK安全之Frida反调试检测</a></li>
+<li><a href="https://orangey.info/2023/04/04/129030205/">ATTACK安全之检测 Android APN 代理</a></li>
+<li><a href="https://orangey.info/2023/04/04/128284191/">ATTACK安全之检测BootLoader+内核+文件系统的安全启动固件的异常篡改行为「一」</a></li>
+</ul>
+<h1 id="0x04-汽车信息安全运营系列指南"><a href="#0x04-汽车信息安全运营系列指南" class="headerlink" title="0x04 汽车信息安全运营系列指南"></a>0x04 汽车信息安全运营系列指南</h1><h2 id="4-1-Car-Threat-Hunting"><a href="#4-1-Car-Threat-Hunting" class="headerlink" title="4.1 Car Threat Hunting"></a>4.1 Car Threat Hunting</h2><ul>
+<li><a href="https://orangey.info/2023/04/04/129403024/">CarT hreat Hunting之威胁狩猎相关资源、威胁检测及威胁狩猎的工具、资源等大合集</a></li>
+<li><a href="https://orangey.info/2023/04/04/129491146/">Car Threat Hunting之关于威胁狩猎该如何入门？你必须知道的那些事「7万字详解」</a></li>
+</ul>
+<h2 id="4-2-ATTACK"><a href="#4-2-ATTACK" class="headerlink" title="4.2 ATTACK"></a>4.2 ATTACK</h2><ul>
+<li><a href="https://orangey.info/2020/01/01/123353195/">ATTACK安全之ATT&amp;CK框架在车联网安全中的应用和企业SOC实践分析</a></li>
+</ul>
+<h1 id="0x05-待写系列"><a href="#0x05-待写系列" class="headerlink" title="0x05 待写系列"></a>0x05 待写系列</h1><h2 id="5-1-ToBeWritten"><a href="#5-1-ToBeWritten" class="headerlink" title="5.1 ToBeWritten"></a>5.1 ToBeWritten</h2><ul>
+<li><a href="https://orangey.info/2023/04/04/129953419/">ToBeWritten之ARM汇编基础铺垫</a></li>
+<li><a href="https://orangey.info/2023/04/04/129953784/">ToBeWritten之IoT静&#x2F;动态环境搭建</a></li>
+<li><a href="https://orangey.info/2023/04/04/129953486/">ToBeWritten之MIPS汇编基础铺垫</a></li>
+<li><a href="https://orangey.info/2023/04/04/129953850/">ToBeWritten之Ghidra 使用教程</a></li>
+<li><a href="https://orangey.info/2023/04/04/129953988/">ToBeWritten之IoT 威胁建模</a></li>
+<li><a href="https://orangey.info/2023/04/04/129953930/">ToBeWritten之Radare2 使用教程</a></li>
+<li><a href="https://orangey.info/2023/04/04/129954263/">ToBeWritten之PWN入门介绍&#x2F;环境搭建</a></li>
+<li><a href="https://orangey.info/2023/04/04/129954364/">ToBeWritten之MIPS堆栈溢出</a></li>
+<li><a href="https://orangey.info/2023/04/04/129954324/">ToBeWritten之PWN常见工具详解</a></li>
+<li><a href="https://orangey.info/2023/04/04/129954458/">ToBeWritten之ARM堆栈溢出</a></li>
+<li><a href="https://orangey.info/2023/04/04/129954534/">ToBeWritten之物联网通信接口调试</a></li>
+<li><a href="https://orangey.info/2023/04/04/129954554/">ToBeWritten之物联网硬件层安全讲解</a></li>
+<li><a href="https://orangey.info/2023/04/04/129954922/">ToBeWritten之物联网硬件渗透测试流程</a></li>
+<li><a href="https://orangey.info/2023/04/04/129978053/">ToBeWritten之IoT文件系统详解</a></li>
+<li><a href="https://orangey.info/2023/04/04/129978473/">ToBeWritten之理解嵌入式Web HTTP协议</a></li>
+<li><a href="https://orangey.info/2023/04/04/129978480/">ToBeWritten之Tinyhttp源码分析讲解</a></li>
+<li><a href="https://orangey.info/2023/04/04/129978509/">ToBeWritten之嵌入式Web应用</a></li>
+<li><a href="https://orangey.info/2023/04/04/129978465/">ToBeWritten之嵌入式操作系统</a></li>
+<li><a href="https://orangey.info/2023/04/04/129978518/">ToBeWritten之物联网WI-FI协议</a></li>
+<li><a href="https://orangey.info/2023/04/04/129978500/">ToBeWritten之理解嵌入式Web Soap协议</a></li>
+<li><a href="https://orangey.info/2023/04/06/129984127/">ToBeWritten之物联网RFID协议</a></li>
+<li><a href="https://orangey.info/2023/04/06/129984094/">ToBeWritten之物联网Zigbee协议</a></li>
+<li><a href="https://orangey.info/2023/04/06/129984110/">ToBeWritten之物联网 BlueTooth&#x2F;BLE 协议</a></li>
+<li><a href="https://orangey.info/2023/04/06/129984908/">ToBeWritten之物联网MQTT、Z-Wave等协议</a></li>
+<li><a href="https://orangey.info/2023/04/06/129985014/">ToBeWritten之IoT移动应用漏洞利用（IOS 应用程序分析）</a></li>
+<li><a href="https://orangey.info/2023/04/06/129985053/">ToBeWritten之Android&#x2F;物联网各层防御措施</a></li>
+<li><a href="https://orangey.info/2023/04/06/129985124/">ToBeWritten之固件威胁建模</a></li>
+<li><a href="https://orangey.info/2023/04/06/129985748/">ToBeWritten之IoT Web、移动应用、设备硬件、无线电通信、IoV威胁建模</a></li>
+<li><a href="https://orangey.info/2023/04/06/129985780/">ToBeWritten之篡改固件</a></li>
+<li><a href="https://orangey.info/2023/04/06/129985817/">ToBeWritten之IoT 技战法</a></li>
+<li><a href="https://orangey.info/2023/04/06/129985954/">ToBeWritten之MOST协议、Flex Rat总线、车载以太网</a></li>
+<li><a href="https://orangey.info/2023/04/06/129986041/">ToBeWritten之CAN总线</a></li>
+<li><a href="https://orangey.info/2023/04/06/129986067/">ToBeWritten之SAE-J1850协议</a></li>
+<li><a href="https://orangey.info/2023/04/06/129986007/">ToBeWritten之汽车信息安全威胁建模</a></li>
+<li><a href="https://orangey.info/2023/04/06/129988148/">ToBeWritten之关键字协议 (基于CAN和K-Line) 和ISO 9141-2</a></li>
+<li><a href="https://orangey.info/2023/04/06/129988191/">ToBeWritten之局域互联网协议</a></li>
+<li><a href="https://orangey.info/2023/04/06/129988498/">ToBeWritten之车载信息娱乐系统 (IVI)</a></li>
+<li><a href="https://orangey.info/2023/04/06/130002192/">ToBeWritten之车辆通信</a></li>
+<li><a href="https://orangey.info/2023/04/06/130002206/">ToBeWritten之ECU</a></li>
+<li><a href="https://orangey.info/2023/04/06/130002224/">ToBeWritten之杂项</a></li>
+<li><a href="https://orangey.info/2023/04/04/130002792/">ToBeWritten之杂项2</a></li>
+<li><a href="https://orangey.info/2023/04/06/130002322/">ToBeWritten之硬件攻防</a></li>
+<li><a href="https://orangey.info/2023/04/06/130002346/">ToBeWritten之Dalvik 可执行格式与字节码规范</a></li>
+<li><a href="https://orangey.info/2023/04/04/130002803/">ToBeWritten之车联网落地VSOC方案</a></li>
+<li><a href="https://orangey.info/2023/04/04/130002814/">ToBeWritten之硬件安全</a></li>
+<li><a href="https://orangey.info/2023/04/04/130002805/">ToBeWritten之Car ATT&amp;CK 矩阵</a></li>
+<li><a href="https://orangey.info/2023/04/04/130010081/">ToBeWritten之Android 移动安全渗透测试项</a></li>
+<li><a href="https://orangey.info/2023/04/04/130010107/">ToBeWritten之反入侵安全技术面经总结</a></li>
+<li><a href="https://orangey.info/2023/04/04/130010136/">ToBeWritten之内存损坏漏洞</a></li>
+<li><a href="https://orangey.info/2023/04/04/130010160/">ToBeWritten之反调试检测总结</a></li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/CarHacking/">#CarHacking</a>
+      
+        <a href="/tags/AndroidSecurity/">#AndroidSecurity</a>
+      
+        <a href="/tags/ATTACK/">#ATTACK</a>
+      
+        <a href="/tags/CarThreatHunting/">#CarThreatHunting</a>
+      
+        <a href="/tags/BlogGuide/">#BlogGuide</a>
+      
+        <a href="/tags/ToBeWritten/">#ToBeWritten</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>”橙留香Park | 车联网安全博客“ 必读指南：让你在学习的路上不再孤单</div>
+      <div>https://orangey.info/2030/10/10/129953419BogGuide/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>橙留香Park</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2030年10月10日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/01/01/128852835/" title="Android安全之移动安全测试指南「移动应用程序篡改和逆向工程」">
+                        <span class="hidden-mobile">Android安全之移动安全测试指南「移动应用程序篡改和逆向工程」</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.7.2/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"1e96aec5ac46370916fa","clientSecret":"ee5e97a65cf34e9fe31e15ab0421a94968237f5e","repo":"ogGitalk","owner":"ananasOrangey","admin":["ananasOrangey"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'a5d59a7e0908fe69287f0665250b8720'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://orangey.blog.csdn.net" target="_blank" rel="nofollow noopener"><span>CSDN博客</span></a> <i class="iconfont icon-love"></i> <a href="https://mp.weixin.qq.com/s/dl1nKyX_gVVG8jRvQXq9yw" target="_blank" rel="nofollow noopener"><span>微信公众号</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
